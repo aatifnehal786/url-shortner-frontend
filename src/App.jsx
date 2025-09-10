@@ -11,7 +11,7 @@ function App() {
 
   const handleShorten = async () => {
     try {
-      const res = await fetch("http://127.0.0.1:8000/shorten", {
+      const res = await fetch("https://urlshortener-rd8u.onrender.com/shorten", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ longUrl, customAlias, expirationTime }),
@@ -32,7 +32,7 @@ function App() {
 
   const fetchAnalytics = async () => {
     try {
-      const res = await fetch(`http://127.0.0.1:8000/analytics/${code}`);
+      const res = await fetch(`https://urlshortener-rd8u.onrender.com/analytics/${code}`);
       const data = await res.json();
       if (data.clickCounts !== undefined) {
         setAnalytics(data);
